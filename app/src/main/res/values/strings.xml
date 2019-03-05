@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">Einzelabgabe_11777902</string>
+    <string name="MatrikelnummerEingeben">Matrikelnummer eingeben</string>
+    <string name="AntwortvomServer">Antwort vom Server</string>
+    <string name="Abschicken">Abschicken</string>
+
 </resources>
