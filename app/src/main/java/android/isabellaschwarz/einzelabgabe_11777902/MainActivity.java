@@ -40,4 +40,32 @@ public class MainActivity extends AppCompatActivity {
 
 
     }
+
+    public void berechnen(View view){
+        TextView serverantwort = findViewById(R.id.serverAntwort);
+        String matrikelnummer = ((EditText)findViewById(R.id.matrikelnummer)).getText().toString();
+        String ergebnis = "";
+        char[] matrikelNummerChars = matrikelnummer.toCharArray();
+        for(int i = 0; i < matrikelNummerChars.length; i++){
+            if(primzahl(matrikelNummerChars[i])){
+                ergebnis += matrikelNummerChars[i];
+            }
+        }
+        serverantwort.setText(ergebnis);
+
+    }
+
+    private boolean primzahl(char matrikelNummerChar) {
+        int zahl = Integer.parseInt(""+matrikelNummerChar);
+        if(zahl == 1)
+            return true;
+        for (int i = 2; i < Math.sqrt(zahl); i++) {
+            if(zahl % i == 0){
+                return false;
+            }
+        }
+        return true;
+    }
+
+
 }

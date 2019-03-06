@@ -4,5 +4,6 @@
     <string name="AntwortvomServer">Antwort vom Server</string>
     <string name="Abschicken">Abschicken</string>
     <string name="TestAntwort">Matrikelnummer wurde an Server gesendet</string>
+    <string name="Berechnen">Berechnen</string>
 
 </resources>
