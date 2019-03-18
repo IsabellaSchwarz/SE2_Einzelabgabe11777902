@@ -3,6 +3,7 @@ package android.isabellaschwarz.einzelabgabe_11777902;
 import android.os.AsyncTask;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.TextView;
@@ -77,21 +78,25 @@ public class MainActivity extends AppCompatActivity {
         TextView serverantwort = findViewById(R.id.serverAntwort);
         String matrikelnummer = ((EditText)findViewById(R.id.matrikelnummer)).getText().toString();
         String ergebnis = "";
+        Log.d("BERECHNEN",matrikelnummer);
         char[] matrikelNummerChars = matrikelnummer.toCharArray();
         for(int i = 0; i < matrikelNummerChars.length; i++){
             if(primzahl(matrikelNummerChars[i])){
-                ergebnis += matrikelNummerChars[i];
+                ergebnis += matrikelNummerChars[i]+"";
             }
         }
+        Log.d("BERECHNEN",ergebnis);
         serverantwort.setText(ergebnis);
 
     }
 
     private boolean primzahl(char matrikelNummerChar) {
         int zahl = Integer.parseInt(""+matrikelNummerChar);
+        if(zahl == 0)
+            return false;
         if(zahl == 1)
             return true;
-        for (int i = 2; i < Math.sqrt(zahl); i++) {
+        for (int i = 2; i <= zahl/2; i++) {
             if(zahl % i == 0){
                 return false;
             }
